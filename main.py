@@ -1,5 +1,5 @@
-import multiprocessing as mp
 import random
+import os
 
 # Global variables  
 POPULATION_SIZE = 250
@@ -541,9 +541,15 @@ if __name__ == '__main__':
     """ Main function. """
     total_fitness = []
     
-    pool = mp.Pool(mp.cpu_count())
+    input_files = len(os.listdir('inputs'))
     
-    total_fitness = pool.map(run_test, range(100))
+    print(f'Number of input files: {input_files}')  
     
-    pool.close()
-    pool.join()
+    for i in range(input_files):
+        print(f'Input{i + 1} is read')
+        total_fitness.append(run_test(i))
+        
+    print(f'Total fitness: {sum(total_fitness)}')
+    print(f'Average fitness: {sum(total_fitness) / input_files}')
+    print(f'Max fitness: {max(total_fitness)}')
+    print(f'Min fitness: {min(total_fitness)}')
