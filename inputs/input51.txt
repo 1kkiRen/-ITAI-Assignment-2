@@ -1,0 +1,9 @@
+roller
+movies
+peterson
+athletes
+dependent
+implement
+attendance
+intersection
+intellectual

@@ -1,0 +1,8 @@
+acquired
+provided
+approved
+verified
+modified
+compiled
+declared
+achievement
